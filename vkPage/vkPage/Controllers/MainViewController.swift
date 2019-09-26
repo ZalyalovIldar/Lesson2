@@ -14,11 +14,13 @@ class MainViewController: UIViewController {
     @IBOutlet weak var vkPageLabel: UILabel!
     @IBOutlet weak var phoneNumberLabel: UILabel!
     
+    @IBOutlet weak var flatstackLogo: UIImageView!
+    @IBOutlet weak var technokratosLogo: UIImageView!
+    
     @IBOutlet weak var gift1: UIImageView!
     @IBOutlet weak var gift2: UIImageView!
     @IBOutlet weak var gift3: UIImageView!
     @IBOutlet weak var gift4: UIImageView!
-    
     
     @IBOutlet weak var statusView: UIView!
     
@@ -28,6 +30,12 @@ class MainViewController: UIViewController {
         
         userPhoto.layer.cornerRadius = userPhoto.frame.height / 2
         userPhoto.clipsToBounds = true
+        
+        technokratosLogo.layer.cornerRadius = technokratosLogo.frame.height / 2
+        technokratosLogo.clipsToBounds = true
+        
+        flatstackLogo.layer.cornerRadius = flatstackLogo.frame.height / 2
+        flatstackLogo.clipsToBounds = true
         
         let tapGesture = UITapGestureRecognizer(target: self, action: #selector(self.tapGesture))
         statusView.addGestureRecognizer(tapGesture)
@@ -52,7 +60,10 @@ class MainViewController: UIViewController {
         let nameSamples = ["Никита Лужбин", "Петр Аркадьевич", "Геннадий Паровозов", "Василий Уткин"]
         nameLabel.text = nameSamples.randomElement()
         
-        let isActiveSamples = ["online", "ofline"]
+        let changedTitle = String((nameLabel.text?.split(separator: " ").first)!)
+        title = changedTitle
+        
+        let isActiveSamples = ["online", "offline"]
         isActiveLabel.text = isActiveSamples.randomElement()
         
         let shortInfoSamples = ["19 years old, Kazan", "20 years old, Moscow", "30 years old, Ufa"]
