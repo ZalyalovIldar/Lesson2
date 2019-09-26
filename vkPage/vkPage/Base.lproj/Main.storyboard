@@ -10,7 +10,7 @@
         <!--Nikita-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="vkPage" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="BYZ-38-t0r" customClass="MainViewController" customModule="vkPage" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="1000"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -431,12 +431,80 @@
                     <navigationItem key="navigationItem" title="Nikita" id="i4l-KF-S9c"/>
                     <size key="freeformSize" width="375" height="1000"/>
                     <connections>
+                        <outlet property="birthDayLabel" destination="qAg-Ck-ASY" id="WIi-gP-H9s"/>
+                        <outlet property="isActiveLabel" destination="fZb-AI-F08" id="PmE-PM-J0U"/>
+                        <outlet property="languagesLabel" destination="pDz-wJ-bdg" id="ft7-dp-hRG"/>
+                        <outlet property="livingCityLabel" destination="4Ud-sx-LI8" id="xVg-R5-QPL"/>
+                        <outlet property="nameLabel" destination="h0J-Rd-Hid" id="Nay-0Y-NPP"/>
+                        <outlet property="phoneNumberLabel" destination="soS-9a-OWK" id="j9H-bE-Ay0"/>
+                        <outlet property="shortInfo" destination="ogu-SW-NJ1" id="X1P-vY-XPq"/>
+                        <outlet property="statusLabel" destination="Jbg-Bc-f9g" id="tNr-qG-VLR"/>
+                        <outlet property="statusView" destination="dfJ-Jc-Rvo" id="7Q8-wL-3O0"/>
+                        <outlet property="studiedAtLabel" destination="Wv5-2d-LFe" id="qO8-zP-RZO"/>
                         <outlet property="userPhoto" destination="CG3-KV-ofE" id="IDP-Ou-1tq"/>
+                        <outlet property="vkPageLabel" destination="8Bp-un-OML" id="GLK-QZ-iJh"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1116" y="113.3433283358321"/>
+            <point key="canvasLocation" x="879" y="114"/>
+        </scene>
+        <!--Status Editing View Controller-->
+        <scene sceneID="HMq-pa-1IB">
+            <objects>
+                <viewController storyboardIdentifier="statusEditingVC" id="K41-JK-CoJ" customClass="StatusEditingViewController" customModule="vkPage" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="ABg-Fx-11M">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <navigationBar contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Tl0-FX-NzE">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
+                                <color key="barTintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <textAttributes key="titleTextAttributes">
+                                    <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                </textAttributes>
+                                <items>
+                                    <navigationItem title="Status" id="gjM-Xx-drQ">
+                                        <barButtonItem key="leftBarButtonItem" systemItem="cancel" id="m96-ri-rfh">
+                                            <connections>
+                                                <action selector="cancelButtonPressed:" destination="K41-JK-CoJ" id="dhv-hr-hyI"/>
+                                            </connections>
+                                        </barButtonItem>
+                                        <barButtonItem key="rightBarButtonItem" style="done" systemItem="done" id="tf1-zZ-Rfk">
+                                            <connections>
+                                                <action selector="doneButtonPressed:" destination="K41-JK-CoJ" id="LsO-ye-UOJ"/>
+                                            </connections>
+                                        </barButtonItem>
+                                    </navigationItem>
+                                </items>
+                            </navigationBar>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="zyK-jn-ccP">
+                                <rect key="frame" x="16" y="60" width="343" height="581"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                                <color key="textColor" systemColor="labelColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                            </textView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="zyK-jn-ccP" firstAttribute="leading" secondItem="wVg-MX-eRt" secondAttribute="leading" constant="16" id="7Ov-SO-QcQ"/>
+                            <constraint firstItem="wVg-MX-eRt" firstAttribute="bottom" secondItem="zyK-jn-ccP" secondAttribute="bottom" constant="26" id="AWc-MP-JwD"/>
+                            <constraint firstItem="Tl0-FX-NzE" firstAttribute="trailing" secondItem="wVg-MX-eRt" secondAttribute="trailing" id="Dbk-Yh-gWN"/>
+                            <constraint firstItem="wVg-MX-eRt" firstAttribute="trailing" secondItem="zyK-jn-ccP" secondAttribute="trailing" constant="16" id="PEw-D0-LPj"/>
+                            <constraint firstItem="Tl0-FX-NzE" firstAttribute="leading" secondItem="wVg-MX-eRt" secondAttribute="leading" id="d9B-Pf-oNL"/>
+                            <constraint firstItem="Tl0-FX-NzE" firstAttribute="top" secondItem="wVg-MX-eRt" secondAttribute="top" id="gIJ-JG-gXf"/>
+                            <constraint firstItem="zyK-jn-ccP" firstAttribute="top" secondItem="Tl0-FX-NzE" secondAttribute="bottom" constant="16" id="rOx-xi-GVo"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="wVg-MX-eRt"/>
+                    </view>
+                    <connections>
+                        <outlet property="textView" destination="zyK-jn-ccP" id="nKl-x8-ChD"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="oZ2-sq-z2i" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1597.5999999999999" y="113.79310344827587"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="ZOE-AE-1Nf">
