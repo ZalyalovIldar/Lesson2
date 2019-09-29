@@ -7,16 +7,20 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		2906C34F233EB78A00970381 /* DetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2906C34E233EB78A00970381 /* DetailViewController.swift */; };
+		29963142233FE6C200A32C82 /* NewStatusViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29963141233FE6C200A32C82 /* NewStatusViewController.swift */; };
+		29FEAC8E233FC6D300FD4E03 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29FEAC8D233FC6D300FD4E03 /* User.swift */; };
 		7CA18E3F233B9C5900418E08 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7CA18E3E233B9C5900418E08 /* AppDelegate.swift */; };
 		7CA18E41233B9C5900418E08 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7CA18E40233B9C5900418E08 /* ViewController.swift */; };
 		7CA18E44233B9C5900418E08 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7CA18E42233B9C5900418E08 /* Main.storyboard */; };
 		7CA18E46233B9C5A00418E08 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 7CA18E45233B9C5A00418E08 /* Assets.xcassets */; };
 		7CA18E49233B9C5A00418E08 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7CA18E47233B9C5A00418E08 /* LaunchScreen.storyboard */; };
-		7CA18E51233BA60100418E08 /* ViewController2.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7CA18E50233BA60100418E08 /* ViewController2.swift */; };
-		7CA18E54233BA9F400418E08 /* ViewController3.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7CA18E53233BA9F400418E08 /* ViewController3.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		2906C34E233EB78A00970381 /* DetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailViewController.swift; sourceTree = "<group>"; };
+		29963141233FE6C200A32C82 /* NewStatusViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewStatusViewController.swift; sourceTree = "<group>"; };
+		29FEAC8D233FC6D300FD4E03 /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		7CA18E3B233B9C5900418E08 /* Lesson2.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Lesson2.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		7CA18E3E233B9C5900418E08 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		7CA18E40233B9C5900418E08 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -24,8 +28,6 @@
 		7CA18E45233B9C5A00418E08 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		7CA18E48233B9C5A00418E08 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		7CA18E4A233B9C5A00418E08 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		7CA18E50233BA60100418E08 /* ViewController2.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController2.swift; sourceTree = "<group>"; };
-		7CA18E53233BA9F400418E08 /* ViewController3.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController3.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -39,6 +41,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		299631432340AA2500A32C82 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				29FEAC8D233FC6D300FD4E03 /* User.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
 		7CA18E32233B9C5900418E08 = {
 			isa = PBXGroup;
 			children = (
@@ -58,10 +68,11 @@
 		7CA18E3D233B9C5900418E08 /* Lesson2 */ = {
 			isa = PBXGroup;
 			children = (
-				7CA18E3E233B9C5900418E08 /* AppDelegate.swift */,
 				7CA18E52233BA65700418E08 /* ViewControllers */,
-				7CA18E42233B9C5900418E08 /* Main.storyboard */,
+				299631432340AA2500A32C82 /* Model */,
 				7CA18E45233B9C5A00418E08 /* Assets.xcassets */,
+				7CA18E3E233B9C5900418E08 /* AppDelegate.swift */,
+				7CA18E42233B9C5900418E08 /* Main.storyboard */,
 				7CA18E47233B9C5A00418E08 /* LaunchScreen.storyboard */,
 				7CA18E4A233B9C5A00418E08 /* Info.plist */,
 			);
@@ -72,8 +83,8 @@
 			isa = PBXGroup;
 			children = (
 				7CA18E40233B9C5900418E08 /* ViewController.swift */,
-				7CA18E50233BA60100418E08 /* ViewController2.swift */,
-				7CA18E53233BA9F400418E08 /* ViewController3.swift */,
+				2906C34E233EB78A00970381 /* DetailViewController.swift */,
+				29963141233FE6C200A32C82 /* NewStatusViewController.swift */,
 			);
 			path = ViewControllers;
 			sourceTree = "<group>";
@@ -149,10 +160,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				29963142233FE6C200A32C82 /* NewStatusViewController.swift in Sources */,
+				29FEAC8E233FC6D300FD4E03 /* User.swift in Sources */,
+				2906C34F233EB78A00970381 /* DetailViewController.swift in Sources */,
 				7CA18E41233B9C5900418E08 /* ViewController.swift in Sources */,
 				7CA18E3F233B9C5900418E08 /* AppDelegate.swift in Sources */,
-				7CA18E54233BA9F400418E08 /* ViewController3.swift in Sources */,
-				7CA18E51233BA60100418E08 /* ViewController2.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -300,7 +312,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = "";
+				DEVELOPMENT_TEAM = M2992GT752;
 				INFOPLIST_FILE = Lesson2/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -321,7 +333,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = "";
+				DEVELOPMENT_TEAM = M2992GT752;
 				INFOPLIST_FILE = Lesson2/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
 				LD_RUNPATH_SEARCH_PATHS = (

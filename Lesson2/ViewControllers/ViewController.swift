@@ -10,35 +10,57 @@ import UIKit
 
 class ViewController: UIViewController {
     
-    override func loadView() {
-        super.loadView()
-        
-    }
+    @IBOutlet weak var editButton: UIButton!
+    @IBOutlet var userImages: [UIImageView]!
+    @IBOutlet weak var bigPhoto: UIImageView!
+    
+    @IBOutlet weak var fullNameLabel: UILabel!
+    @IBOutlet weak var pageStatusLabel: UILabel!
+    @IBOutlet weak var infoLabel: UILabel!
+    
+    var user: User!
+    let segueId = "showDetail"
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        user = getRandomUser()
         
-    }
-
-    override func viewWillAppear(_ animated: Bool) {
-        super.viewWillAppear(animated)
-        
+        fillProperties()
+        configureButton(editButton)
     }
     
-    override func viewDidAppear(_ animated: Bool) {
-        super.viewDidAppear(animated)
-        
+    func configureButton(_ button: UIButton) {
+        button.layer.cornerRadius = 23
     }
     
-    override func viewWillDisappear(_ animated: Bool) {
-        super.viewWillDisappear(animated)
+    func fillProperties() {
         
+        self.title = user.name
+        
+        for imageView in userImages {
+            
+            imageView.image = UIImage(named: user.avatar)
+            imageView.layer.cornerRadius = imageView.frame.height / 2
+            imageView.clipsToBounds = true
+        }
+        
+        bigPhoto.image = UIImage(named: user.avatar)
+        
+        fullNameLabel.text = "\(user.name) \(user.surname)"
+        pageStatusLabel.text = user.pageStatus
+        infoLabel.text = "\(user.age) лет, \(user.city)"
+            
     }
     
-    override func viewDidDisappear(_ animated: Bool) {
-        super.viewDidDisappear(animated)
-        
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+      
+        if segue.identifier == segueId {
+            
+            if let destinationVC = segue.destination as? DetailViewController {
+                destinationVC.user = user
+            }
+        }
     }
 }
 
