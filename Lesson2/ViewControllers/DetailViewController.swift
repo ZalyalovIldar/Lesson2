@@ -8,7 +8,7 @@
 
 import UIKit
 
-class DetailViewController: UIViewController, Delegate {
+class DetailViewController: UIViewController, DataPassDelegate {
     
     @IBOutlet weak var scrollView: UIScrollView!
     
@@ -30,7 +30,6 @@ class DetailViewController: UIViewController, Delegate {
     @IBOutlet weak var phoneNumberLabel: UILabel!
     @IBOutlet weak var vkIdLabel: UILabel!
     
-    
     @IBOutlet var universityLabels: [UILabel]!
     @IBOutlet weak var facultyLabel: UILabel!
     @IBOutlet weak var schoolLabel: UILabel!
@@ -49,6 +48,8 @@ class DetailViewController: UIViewController, Delegate {
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
+        
+        statusLabel.text = user.status
         
         if statusLabel.text == "" {
             editStatusLabel.isHidden = false
@@ -99,7 +100,9 @@ class DetailViewController: UIViewController, Delegate {
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         
         if segue.identifier == "newStatus" {
+            
             let destVC = segue.destination as! NewStatusViewController
+            
             destVC.delegate = self
             destVC.text = statusLabel.text
         }
@@ -108,5 +111,4 @@ class DetailViewController: UIViewController, Delegate {
     func updateLabel(with text: String) {
         self.statusLabel.text = text
     }
-    
 }

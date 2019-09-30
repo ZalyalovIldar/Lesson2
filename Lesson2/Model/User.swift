@@ -67,8 +67,24 @@ func getRandomUser() -> User {
         let month = months.randomElement(),
         let univer = univers.randomElement(),
         let faculty = faculties.randomElement()
+        
         else {
-            return User(name: "name", surname: "surname", birthday: 0, month: "month", age: 10, status: "status", city: "city", pageStatus: "page status", avatar: "avatar", phone: "phone", schoolName: "", schoolCity: "", schoolYears: "", univer: "univer", faculty: "", id: "inst")
+            return User(name: "",
+                        surname: "",
+                        birthday: 0,
+                        month: "",
+                        age: 0,
+                        status: "",
+                        city: "",
+                        pageStatus: "",
+                        avatar: "",
+                        phone: "",
+                        schoolName: "",
+                        schoolCity: "",
+                        schoolYears: "",
+                        univer: "",
+                        faculty: "",
+                        id: "")
     }
         
     return User.init(name: name,

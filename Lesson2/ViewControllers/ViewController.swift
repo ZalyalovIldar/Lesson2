@@ -11,7 +11,7 @@ import UIKit
 class ViewController: UIViewController {
     
     @IBOutlet weak var editButton: UIButton!
-    @IBOutlet var userImages: [UIImageView]!
+    @IBOutlet var userImages: [UIImageView]! // Большая аватарка и маленькая в разделе "Что у вас нового"
     @IBOutlet weak var bigPhoto: UIImageView!
     
     @IBOutlet weak var fullNameLabel: UILabel!
@@ -34,12 +34,12 @@ class ViewController: UIViewController {
         button.layer.cornerRadius = 23
     }
     
+    // Заполняем поля данными
     func fillProperties() {
         
         self.title = user.name
         
-        for imageView in userImages {
-            
+        for imageView in userImages {            
             imageView.image = UIImage(named: user.avatar)
             imageView.layer.cornerRadius = imageView.frame.height / 2
             imageView.clipsToBounds = true
@@ -50,16 +50,13 @@ class ViewController: UIViewController {
         fullNameLabel.text = "\(user.name) \(user.surname)"
         pageStatusLabel.text = user.pageStatus
         infoLabel.text = "\(user.age) лет, \(user.city)"
-            
+        
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-      
         if segue.identifier == segueId {
-            
-            if let destinationVC = segue.destination as? DetailViewController {
-                destinationVC.user = user
-            }
+            let destinationVC = segue.destination as! DetailViewController
+            destinationVC.user = user
         }
     }
 }

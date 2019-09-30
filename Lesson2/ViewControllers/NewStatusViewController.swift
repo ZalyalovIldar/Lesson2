@@ -8,13 +8,16 @@
 
 import UIKit
 
+protocol DataPassDelegate {
+    func updateLabel(with text: String)
+}
+
 class NewStatusViewController: UIViewController, UITextViewDelegate {
     
-    
     @IBOutlet weak var statusTextView: UITextView!
-   
+    
     var text: String!
-    var delegate: Delegate!
+    var delegate: DataPassDelegate!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -24,11 +27,6 @@ class NewStatusViewController: UIViewController, UITextViewDelegate {
     
     @IBAction func doneButtonPressed(_ sender: UIBarButtonItem) {
         delegate.updateLabel(with: statusTextView.text)
-        
         dismiss(animated: true, completion: nil)
     }
-}
-
-protocol Delegate {
-    func updateLabel(with text: String)
 }
