@@ -9,7 +9,7 @@
 import UIKit
 
 class ViewController: UIViewController {
-
+    
     @IBOutlet weak var scroller: UIScrollView?
     @IBOutlet weak var avatarImage: UIImageView?
     @IBOutlet weak var yearLabel: UILabel?
@@ -73,6 +73,14 @@ class ViewController: UIViewController {
     func randomProfileUser() {
         
         let randomUser = User.getRandomUser()
+        var languagesString = ""
+        
+        for language in randomUser.languages {
+            languagesString += String(language + ", ")
+        }
+        
+        languagesString.removeLast(2)
+        
         
         avatarImage?.image = UIImage(named: randomUser.avatarImage)
         yearLabel?.text = randomUser.year
@@ -81,16 +89,7 @@ class ViewController: UIViewController {
         statusLabel?.text = randomUser.status
         dateOfBirthLabel?.text = randomUser.dateOfBirth
         homeTownLabel?.text = randomUser.homeTown
-        
-        var languagesString = ""
-        
-        for language in randomUser.languages {
-            languagesString += String(language + ", ")
-        }
-        languagesString.removeLast(2)
-        
         languagesLabel?.text = languagesString
-        
         locationLabel?.text = randomUser.location
         instagramLabel?.text = randomUser.instagram
         vkLabel?.text = randomUser.vk
@@ -98,8 +97,6 @@ class ViewController: UIViewController {
         companyTwoLabel?.text = randomUser.companyTwo
         schoolLabel?.text = randomUser.school
         universityLabel?.text = randomUser.university
-        
     }
-    
 }
 

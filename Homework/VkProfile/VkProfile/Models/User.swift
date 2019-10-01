@@ -153,7 +153,6 @@ struct User {
         self.university = university
     }
     
-    
     static func getRandomUser() -> User {
         guard
             let avatarImage = User.avatars.randomElement(),
@@ -171,11 +170,10 @@ struct User {
             let companyTwo = User.companies.randomElement(),
             let school = User.schools.randomElement(),
             let university = User.universities.randomElement()
-        else {
-            return User()
+            else {
+                return User()
         }
         
         return User(avatarImage: avatarImage, year: year, city: city, name: name, status: status, dateOfBirth: dateOfBirth, homeTown: homeTown, languages: languages, location: location, instagram: instagram, vk: vk, companyOne: companyOne, companyTwo: companyTwo, school: school, university: university)
     }
-    
 }
