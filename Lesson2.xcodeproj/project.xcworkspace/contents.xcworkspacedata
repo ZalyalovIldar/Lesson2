@@ -2,6 +2,9 @@
 <Workspace
    version = "1.0">
    <FileRef
-      location = "self:Lesson2.xcodeproj">
+      location = "group:/Users/air/Desktop/iOSLab/Lesson2/Lesson2/Main.storyboard">
+   </FileRef>
+   <FileRef
+      location = "self:">
    </FileRef>
 </Workspace>
