@@ -9,6 +9,7 @@
 import Foundation
 
 class User {
+    
     var name: String!
     var avatarImage: String!
     var isOnline: Bool!
