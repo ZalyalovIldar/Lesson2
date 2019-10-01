@@ -1,0 +1,116 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Bucket
+   uuid = "4160437C-FBDD-4E55-9E82-D499E65125AB"
+   type = "1"
+   version = "2.0">
+   <Breakpoints>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "624EEA01-1924-4D04-B1A5-EFF2AA55323B"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Lesson2/ViewControllers/ViewController.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "13"
+            endingLineNumber = "13"
+            landmarkName = "ViewController"
+            landmarkType = "3">
+            <Locations>
+               <Location
+                  uuid = "624EEA01-1924-4D04-B1A5-EFF2AA55323B - 1845661e34a9e562"
+                  shouldBeEnabled = "No"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "Lesson2.ViewController.mainView.getter : Swift.Optional&lt;__C.UIView&gt;"
+                  moduleName = "Lesson2"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/underq/Desktop/Lesson2/Lesson2/ViewControllers/ViewController.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "13"
+                  endingLineNumber = "13"
+                  offsetFromSymbolStart = "126">
+               </Location>
+               <Location
+                  uuid = "624EEA01-1924-4D04-B1A5-EFF2AA55323B - 2c8202d5a17302de"
+                  shouldBeEnabled = "No"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "Lesson2.ViewController.mainView.setter : Swift.Optional&lt;__C.UIView&gt;"
+                  moduleName = "Lesson2"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/underq/Desktop/Lesson2/Lesson2/ViewControllers/ViewController.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "13"
+                  endingLineNumber = "13"
+                  offsetFromSymbolStart = "160">
+               </Location>
+               <Location
+                  uuid = "624EEA01-1924-4D04-B1A5-EFF2AA55323B - 6a96441855d6e347"
+                  shouldBeEnabled = "No"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "Lesson2.ViewController.mainView.modify : Swift.Optional&lt;__C.UIView&gt;"
+                  moduleName = "Lesson2"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/underq/Desktop/Lesson2/Lesson2/ViewControllers/ViewController.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "0"
+                  endingLineNumber = "0"
+                  offsetFromSymbolStart = "18">
+               </Location>
+               <Location
+                  uuid = "624EEA01-1924-4D04-B1A5-EFF2AA55323B - ecaca75f2626571d"
+                  shouldBeEnabled = "No"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "Lesson2.ViewController.mainView.modify : Swift.Optional&lt;__C.UIView&gt; with unmangled suffix &quot;.resume.0&quot;"
+                  moduleName = "Lesson2"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/underq/Desktop/Lesson2/Lesson2/ViewControllers/ViewController.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "13"
+                  endingLineNumber = "13"
+                  offsetFromSymbolStart = "4">
+               </Location>
+               <Location
+                  uuid = "624EEA01-1924-4D04-B1A5-EFF2AA55323B - 4ace78d36d8e7882"
+                  shouldBeEnabled = "No"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "Lesson2.ViewController.init(nibName: Swift.Optional&lt;Swift.String&gt;, bundle: Swift.Optional&lt;__C.NSBundle&gt;) -&gt; Lesson2.ViewController"
+                  moduleName = "Lesson2"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/underq/Desktop/Lesson2/Lesson2/ViewControllers/ViewController.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "13"
+                  endingLineNumber = "13"
+                  offsetFromSymbolStart = "182">
+               </Location>
+               <Location
+                  uuid = "624EEA01-1924-4D04-B1A5-EFF2AA55323B - c584c42369ca69b4"
+                  shouldBeEnabled = "No"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "Lesson2.ViewController.init(coder: __C.NSCoder) -&gt; Swift.Optional&lt;Lesson2.ViewController&gt;"
+                  moduleName = "Lesson2"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/underq/Desktop/Lesson2/Lesson2/ViewControllers/ViewController.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "13"
+                  endingLineNumber = "13"
+                  offsetFromSymbolStart = "117">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+   </Breakpoints>
+</Bucket>
