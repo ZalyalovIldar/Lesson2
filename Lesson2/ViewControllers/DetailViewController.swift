@@ -39,6 +39,7 @@ class DetailViewController: UIViewController, DataPassDelegate {
     @IBOutlet var giftsImageView: [UIImageView]!
     
     var user: User!
+    let segueToNewStatusId = "newStatus"
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -48,10 +49,8 @@ class DetailViewController: UIViewController, DataPassDelegate {
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-        
-        statusLabel.text = user.status
-        
-        if statusLabel.text == "" {
+                
+        if statusLabel.text!.isEmpty {
             editStatusLabel.isHidden = false
             status.isHidden = true
             statusLabel.isHidden = true
@@ -99,7 +98,7 @@ class DetailViewController: UIViewController, DataPassDelegate {
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         
-        if segue.identifier == "newStatus" {
+        if segue.identifier == segueToNewStatusId {
             
             let destVC = segue.destination as! NewStatusViewController
             
@@ -108,7 +107,7 @@ class DetailViewController: UIViewController, DataPassDelegate {
         }
     }
     
-    func updateLabel(with text: String) {
+    func statusUpdated(with text: String) {
         self.statusLabel.text = text
     }
 }

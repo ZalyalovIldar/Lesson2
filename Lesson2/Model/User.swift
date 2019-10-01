@@ -9,22 +9,23 @@
 import Foundation
 
 struct User {
-    var name: String
-    var surname: String
-    var birthday: Int
-    var month: String
-    var age: Int
-    var status: String
-    var city: String
-    var pageStatus: String
-    var avatar: String
-    var phone: String
-    var schoolName: String
-    var schoolCity: String
-    var schoolYears: String
-    var univer: String
-    var faculty: String
-    let id: String
+    
+    var name: String = ""
+    var surname: String = ""
+    var birthday: Int = 0
+    var month: String = ""
+    var age: Int = 0
+    var status: String = ""
+    var city: String = ""
+    var pageStatus: String = ""
+    var avatar: String = ""
+    var phone: String = ""
+    var schoolName: String = ""
+    var schoolCity: String = ""
+    var schoolYears: String = ""
+    var univer: String = ""
+    var faculty: String = ""
+    var id: String = ""
 }
 
 let avatars = ["profile", "profile2", "profile3", "profile4"]
@@ -68,39 +69,22 @@ func getRandomUser() -> User {
         let univer = univers.randomElement(),
         let faculty = faculties.randomElement()
         
-        else {
-            return User(name: "",
-                        surname: "",
-                        birthday: 0,
-                        month: "",
-                        age: 0,
-                        status: "",
-                        city: "",
-                        pageStatus: "",
-                        avatar: "",
-                        phone: "",
-                        schoolName: "",
-                        schoolCity: "",
-                        schoolYears: "",
-                        univer: "",
-                        faculty: "",
-                        id: "")
-    }
-        
-    return User.init(name: name,
-                     surname: surname,
-                     birthday: birthday,
-                     month: month,
-                     age: age,
-                     status: "Hello World!",
-                     city: city,
-                     pageStatus: pageStatus,
-                     avatar: avatar,
-                     phone: phone,
-                     schoolName: schoolName,
-                     schoolCity: schoolCity,
-                     schoolYears: schoolYear,
-                     univer: univer,
-                     faculty: faculty,
-                     id: id)
+        else { return User() }
+  
+    return User(name: name,
+                surname: surname,
+                birthday: birthday,
+                month: month,
+                age: age,
+                status: "Hello World!",
+                city: city,
+                pageStatus: pageStatus,
+                avatar: avatar,
+                phone: phone,
+                schoolName: schoolName,
+                schoolCity: schoolCity,
+                schoolYears: schoolYear,
+                univer: univer,
+                faculty: faculty,
+                id: id)
 }
