@@ -2,7 +2,7 @@ import UIKit
 
 class StatusEditingViewController: UIViewController {
     
-    var statusDelegate: statusPassingDelegate!
+    weak var statusDelegate: StatusPassingDelegate!
     var previousText: String!
 
     @IBOutlet weak var textView: UITextView!
@@ -12,7 +12,7 @@ class StatusEditingViewController: UIViewController {
     }
     
     @IBAction func doneButtonPressed(_ sender: Any) {
-        statusDelegate.changeStatusLabel(for: textView.text)
+        statusDelegate.statusTextChanged(with: textView.text)
         dismiss(animated: true, completion: nil)
     }
     
@@ -23,6 +23,6 @@ class StatusEditingViewController: UIViewController {
     }
 }
 
-protocol statusPassingDelegate {
-    func changeStatusLabel(for text: String)
+protocol StatusPassingDelegate: AnyObject {
+    func statusTextChanged(with text: String)
 }

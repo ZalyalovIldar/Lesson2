@@ -13,17 +13,15 @@ class MainViewController: UIViewController {
     @IBOutlet weak var livingCityLabel: UILabel!
     @IBOutlet weak var vkPageLabel: UILabel!
     @IBOutlet weak var phoneNumberLabel: UILabel!
-    
     @IBOutlet weak var flatstackLogo: UIImageView!
     @IBOutlet weak var technokratosLogo: UIImageView!
-    
     @IBOutlet weak var gift1: UIImageView!
     @IBOutlet weak var gift2: UIImageView!
     @IBOutlet weak var gift3: UIImageView!
     @IBOutlet weak var gift4: UIImageView!
-    
     @IBOutlet weak var statusView: UIView!
     
+    let statusEditingViewControllerIdentifier = "statusEditingVC"
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -37,20 +35,19 @@ class MainViewController: UIViewController {
         flatstackLogo.layer.cornerRadius = flatstackLogo.frame.height / 2
         flatstackLogo.clipsToBounds = true
         
-        let tapGesture = UITapGestureRecognizer(target: self, action: #selector(self.tapGesture))
-        statusView.addGestureRecognizer(tapGesture)
+        let tapGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(tapGesture))
+        statusView.addGestureRecognizer(tapGestureRecognizer)
         
         randomFieldsInitialisation()
-        
     }
     
     @objc func tapGesture() {
         
-        let statusEditingVC = storyboard?.instantiateViewController(identifier: "statusEditingVC") as! StatusEditingViewController
+        let statusEditingVC = storyboard?.instantiateViewController(identifier: statusEditingViewControllerIdentifier) as! StatusEditingViewController
         statusEditingVC.statusDelegate = self
         statusEditingVC.previousText = statusLabel.text
-        present(statusEditingVC, animated: true, completion: nil)
         
+        present(statusEditingVC, animated: true, completion: nil)
     }
     
     func randomFieldsInitialisation() {
@@ -94,15 +91,12 @@ class MainViewController: UIViewController {
         for userGift in userGifts {
             userGift?.image = UIImage(named: "gift\(Int.random(in: 1...5))")
         }
-        
     }
-    
 }
 
-extension MainViewController: statusPassingDelegate {
+extension MainViewController: StatusPassingDelegate {
     
-    func changeStatusLabel(for text: String) {
+    func statusTextChanged(with text: String) {
         self.statusLabel.text = text
     }
-    
 }
