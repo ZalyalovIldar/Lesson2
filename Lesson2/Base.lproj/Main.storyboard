@@ -322,9 +322,15 @@
                                     <navigationItem title="Status" id="uun-Um-mUK">
                                         <barButtonItem key="leftBarButtonItem" title="Back" id="cUR-Kn-d0D">
                                             <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                            <connections>
+                                                <action selector="cancelButtonPressed:" destination="tGQ-rW-40g" id="i6g-s3-gkj"/>
+                                            </connections>
                                         </barButtonItem>
                                         <barButtonItem key="rightBarButtonItem" title="Done" id="2Fm-hq-DFj">
                                             <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                            <connections>
+                                                <action selector="saveButtonPressed:" destination="tGQ-rW-40g" id="TPK-Uh-OX8"/>
+                                            </connections>
                                         </barButtonItem>
                                     </navigationItem>
                                 </items>

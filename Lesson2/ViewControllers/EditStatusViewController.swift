@@ -21,7 +21,6 @@ class EditStatusViewController : UIViewController {
     override func viewDidLoad() {
         
         super.viewDidLoad()
-        
         statusTextView.text = user.status
     }
     
