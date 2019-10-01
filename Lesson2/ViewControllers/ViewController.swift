@@ -88,13 +88,5 @@ class ViewController: UIViewController {
             setStatusButton.setTitleColor(.white, for: .normal)
         }
     }
-    
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        
-        if segue.identifier == "editStatusSegue" {
-            let destVC = segue.destination as! EditStatusViewController
-            destVC.configure(with: user)
-        }
-    }
 }
 
