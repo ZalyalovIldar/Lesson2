@@ -11,6 +11,7 @@ import UIKit
 class EditStatusViewController : UIViewController {
   
     @IBOutlet weak var statusTextView: UITextView!
+    
     var user: User!
     
     func configure(with user: User) {

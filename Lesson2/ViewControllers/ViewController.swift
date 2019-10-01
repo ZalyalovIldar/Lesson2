@@ -80,7 +80,7 @@ class ViewController: UIViewController {
         
         scrollView.contentSize.height = scrollView.getHeight() + 150
         
-        if user.status == "" {
+        if user.status.isEmpty {
             setStatusButton.setTitle("Set status", for: .normal)
         }
         else {
