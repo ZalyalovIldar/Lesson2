@@ -47,7 +47,14 @@ class ViewController: UIViewController {
     @IBOutlet weak var vkView: UIView!
     @IBOutlet weak var studyView: UIView!
     @IBOutlet weak var birthdayView: UIView!
+    
     var user: User!
+    
+    let scrollViewContentAdditionalHeight: CGFloat = 150
+    let editStatusSegueIdentifier = "editStatusSegue"
+    let onlineString = "online"
+    let offlineString = "offline"
+    let editStatusString = "Изменить статус"
     
     override func viewDidLoad() {
         
@@ -76,7 +83,7 @@ class ViewController: UIViewController {
 
         aviImageView.image = UIImage(named: user.aviName)
         nameLabel.text = user.name
-        onlineLabel.text = user.online ? "online" : "offline"
+        onlineLabel.text = user.online ? onlineString : offlineString
         ageAndCityLabel.text = user.ageAndCity
         birthdayLabel.text = user.birthday
         currentStudyLabel.text = user.currentStudy
@@ -103,11 +110,11 @@ class ViewController: UIViewController {
         
         super.viewWillAppear(animated)
         
-        mainScrollView.contentSize.height = contentView.getHeight() + 150
+        mainScrollView.contentSize.height = contentView.getHeight() + scrollViewContentAdditionalHeight
         
-        if user.status == "" {
+        if user.status.isEmpty {
             statusCellCaptionLabel.alpha = 0
-            editStatusButton.setTitle("Изменить статус", for: .normal)
+            editStatusButton.setTitle(editStatusString, for: .normal)
             editStatusButton.setTitleColor(UIColor.gray, for: .normal)
             editStatusButton.contentEdgeInsets = UIEdgeInsets(top: 0, left: 20, bottom: 0, right: 0)
         }
@@ -122,7 +129,7 @@ class ViewController: UIViewController {
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         
-        if segue.identifier == "editStatusSegue" {
+        if segue.identifier == editStatusSegueIdentifier {
             let destVC = segue.destination as! EditStatusViewController
             destVC.configure(with: user)
         }
