@@ -21,26 +21,24 @@ class ViewController: UIViewController {
     let localJobs = ["Yandex", "VK", "1C", "ABBYY", "MailRu"]
     let presents = ["VKPresent1", "VKPresent2", "VKPresent3", "VKPresent4", "VKPresent5"]
     let statuses = ["Все классно!", "На работе", "Занят :(", "Отдыхаю ;)"]
-    
-    var firstName: String!
-    var lastName: String!
-    var birthDate: String!
-    var age: Int!
-    var city: String!
-    var educationPlace: String!
-    var phoneNumber: String!
-    var vkLinkName: String!
-    var instagramLinkName: String!
-    var careerOne: String!
-    var careerTwo: String!
-    var schoolNumber = Int.random(in: 1 ... 100)
-    var presentOne: String!
-    var presentTwo: String!
-    var presentThree: String!
-    var userStatus = ""
+    let dateFormat = "dd/MM/yyyy"
+    let statusEditingSegueIdentifier = "statusEditing"
     let now = Date()
     let dateFormatter = DateFormatter()
+    let navigationBarWidth = 375
+    let navigationBarHeight = 50
+    let scrollViewHeight : CGFloat = 991
+    let navigationItemBackBarButtonItemText = "                       "
+    let indent = "     "
+    
+    var firstName: String!
+    var birthDate: String!
+    var city: String!
+    var educationPlace: String!
+    var schoolNumber = Int.random(in: 1 ... 100)
+    var userStatus = ""
     var windowFrame: CGRect!
+    
     
     @IBOutlet weak var navigationBar: UINavigationItem!
     @IBOutlet weak var profileAvatar: UIImageView!
@@ -68,60 +66,50 @@ class ViewController: UIViewController {
     }
     
     override func viewDidLoad() {
-        
         super.viewDidLoad()
         windowFrame = UIScreen.main.bounds
         scrollView.contentSize.width = windowFrame.size.width
-        scrollView.contentSize.height = 991
+        scrollView.contentSize.height = scrollViewHeight
         
         firstName = firstNames.randomElement()!
-        lastName = lastNames.randomElement()!
         birthDate = birthDates.randomElement()!
         city = cities.randomElement()!
         educationPlace = educationPlaces.randomElement()!
-        vkLinkName = linkNames.randomElement()!
-        instagramLinkName = linkNames.randomElement()!
-        phoneNumber = phoneNumbers.randomElement()!
-        careerOne = localJobs.randomElement()!
-        careerTwo = jobs.randomElement()!
-        presentOne = presents.randomElement()!
-        presentTwo = presents.randomElement()!
-        presentThree = presents.randomElement()!
         userStatus = statuses.randomElement()!
         
-        dateFormatter.dateFormat = "dd/MM/yyyy"
+        dateFormatter.dateFormat = dateFormat
         let birthday: Date = dateFormatter.date(from: birthDate)!
         let calendar = Calendar.current
         let ageComponents = calendar.dateComponents([.year], from: birthday, to: now)
         
         navigationBar.title = firstName
-        navigationBar.titleView?.bounds = CGRect(x: 0, y: 0, width: 375, height: 50)
-        navigationItem.backBarButtonItem?.title = "                       "
+        navigationBar.titleView?.bounds = CGRect(x: 0, y: 0, width: navigationBarWidth, height: navigationBarHeight)
+        navigationItem.backBarButtonItem?.title = navigationItemBackBarButtonItemText
         profileAvatar.layer.cornerRadius = profileAvatar.frame.size.width / 2
         profileAvatar.clipsToBounds = true
         profileAvatar.layer.borderWidth = 1.0
         profileAvatar.layer.borderColor = UIColor.white.cgColor
-        profileName.text = firstName + " " + lastName
+        profileName.text = firstName + " " + lastNames.randomElement()!
         profileAgeAndCity.text = "\(ageComponents.year!) лет, " + city
-        profileBirthDateLine.text = "     " + birthDate
-        profileCityLine.text = "     " + city
-        profileEducationPlaceLine.text = "     " + educationPlace
-        profilePhoneNumberLine.text = "     " + phoneNumber
-        profileVKLinkLine.text = "     " + vkLinkName
-        profileInstagramLinkLine.text = "     " +  instagramLinkName
-        profileSchoolNumberLine.text = "     " + "Школа №\(schoolNumber)"
-        profileHighSchoolLine.text = "     " + educationPlace
-        profileCareerLineOne.text = "     " + careerOne
-        profileCareerLineTwo.text = "     " + careerTwo
-        profilePresent1ImageView.image = UIImage(named: presentOne)
-        profilePresent2ImageView.image = UIImage(named: presentTwo)
-        profilePresent3ImageView.image = UIImage(named: presentThree)
-        profileStatusLine.text = "     " + userStatus
+        profileBirthDateLine.text = indent + birthDate
+        profileCityLine.text = indent + city
+        profileEducationPlaceLine.text = indent + educationPlace
+        profilePhoneNumberLine.text = indent + phoneNumbers.randomElement()!
+        profileVKLinkLine.text = indent + linkNames.randomElement()!
+        profileInstagramLinkLine.text = indent +  linkNames.randomElement()!
+        profileSchoolNumberLine.text = indent + "Школа №\(schoolNumber)"
+        profileHighSchoolLine.text = indent + educationPlace
+        profileCareerLineOne.text = indent + localJobs.randomElement()!
+        profileCareerLineTwo.text = indent + jobs.randomElement()!
+        profilePresent1ImageView.image = UIImage(named: presents.randomElement()!)
+        profilePresent2ImageView.image = UIImage(named: presents.randomElement()!)
+        profilePresent3ImageView.image = UIImage(named: presents.randomElement()!)
+        profileStatusLine.text = indent + userStatus
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         
-        if segue.identifier == "statusEditing" {
+        if segue.identifier == statusEditingSegueIdentifier {
             let destVC = segue.destination as! StatusEditingViewController
             destVC.viewController = self
             destVC.statusText = userStatus
@@ -129,9 +117,8 @@ class ViewController: UIViewController {
     }
     
     func updateStatus(newStatus: String) {
-        
         userStatus = newStatus
-        profileStatusLine.text = "     " + newStatus
+        profileStatusLine.text = indent + newStatus
     }
     
     @IBAction func unwindToProfile(_ sender: UIStoryboardSegue) { }

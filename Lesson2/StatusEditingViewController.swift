@@ -10,10 +10,11 @@ import UIKit
 
 class StatusEditingViewController: UIViewController {
     
-    var viewController: ViewController!
+    weak var viewController: ViewController!
     var statusText: String!
     
     @IBOutlet weak var textView: UITextView!
+    
     @IBAction func saveButtonPressing(_ sender: Any?) {
         viewController.updateStatus(newStatus: textView.text)
     }
