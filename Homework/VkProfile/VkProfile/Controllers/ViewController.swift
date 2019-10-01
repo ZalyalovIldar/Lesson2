@@ -10,38 +10,39 @@ import UIKit
 
 class ViewController: UIViewController {
     
-    @IBOutlet weak var scroller: UIScrollView?
-    @IBOutlet weak var avatarImage: UIImageView?
-    @IBOutlet weak var yearLabel: UILabel?
-    @IBOutlet weak var cityLabel: UILabel?
-    @IBOutlet weak var nameLabel: UILabel?
-    @IBOutlet weak var statusLabel: UILabel?
-    @IBOutlet weak var dateOfBirthLabel: UILabel?
-    @IBOutlet weak var homeTownLabel: UILabel?
-    @IBOutlet weak var languagesLabel: UILabel?
-    @IBOutlet weak var locationLabel: UILabel?
-    @IBOutlet weak var instagramLabel: UILabel?
-    @IBOutlet weak var vkLabel: UILabel?
-    @IBOutlet weak var companyOneLabel: UILabel?
-    @IBOutlet weak var companyTwoLabel: UILabel?
-    @IBOutlet weak var schoolLabel: UILabel?
-    @IBOutlet weak var universityLabel: UILabel?
-    @IBOutlet weak var giftFirstImage: UIImageView?
-    @IBOutlet weak var giftSecondImage: UIImageView?
-    @IBOutlet weak var giftThirdImage: UIImageView?
+    @IBOutlet weak var scroller: UIScrollView!
+    @IBOutlet weak var avatarImage: UIImageView!
+    @IBOutlet weak var yearLabel: UILabel!
+    @IBOutlet weak var cityLabel: UILabel!
+    @IBOutlet weak var nameLabel: UILabel!
+    @IBOutlet weak var statusLabel: UILabel!
+    @IBOutlet weak var dateOfBirthLabel: UILabel!
+    @IBOutlet weak var homeTownLabel: UILabel!
+    @IBOutlet weak var languagesLabel: UILabel!
+    @IBOutlet weak var locationLabel: UILabel!
+    @IBOutlet weak var instagramLabel: UILabel!
+    @IBOutlet weak var vkLabel: UILabel!
+    @IBOutlet weak var companyOneLabel: UILabel!
+    @IBOutlet weak var companyTwoLabel: UILabel!
+    @IBOutlet weak var schoolLabel: UILabel!
+    @IBOutlet weak var universityLabel: UILabel!
+    @IBOutlet weak var giftFirstImage: UIImageView!
+    @IBOutlet weak var giftSecondImage: UIImageView!
+    @IBOutlet weak var giftThirdImage: UIImageView!
     
-    var modelController: ModelController! = ModelController()
+    var modelController = ModelController()
+    let constStatusString = "Измените статус"
     
     override func viewWillAppear(_ animated: Bool) {
         
-        super.viewWillAppear(true)
-        statusLabel?.text = modelController.textOfStatus
+        super.viewWillAppear(animated)
+        statusLabel.text = modelController.textOfStatus
         
-        if modelController.textOfStatus == "Измените статус" {
-            statusLabel?.textColor = .gray
+        if modelController.textOfStatus == constStatusString {
+            statusLabel.textColor = .gray
         }
         else {
-            statusLabel?.textColor = UIColor(red: 0, green: 0, blue: 0, alpha: 1)
+            statusLabel.textColor = .black
         }
     }
     
@@ -60,14 +61,14 @@ class ViewController: UIViewController {
     }
     
     func customScroll() {
-        scroller?.contentSize = CGSize(width: 375, height: 1000)
+        scroller.contentSize = CGSize(width: 300, height: 1000)
     }
     
     func customAvatar() {
         
-        avatarImage?.layer.masksToBounds = false
-        avatarImage?.layer.cornerRadius = (avatarImage?.bounds.width ?? 0) / 2
-        avatarImage?.clipsToBounds = true
+        avatarImage.layer.masksToBounds = false
+        avatarImage.layer.cornerRadius = (avatarImage?.bounds.width ?? 0) / 2
+        avatarImage.clipsToBounds = true
     }
     
     func randomProfileUser() {
@@ -82,21 +83,21 @@ class ViewController: UIViewController {
         languagesString.removeLast(2)
         
         
-        avatarImage?.image = UIImage(named: randomUser.avatarImage)
-        yearLabel?.text = randomUser.year
-        cityLabel?.text = randomUser.city
-        nameLabel?.text = randomUser.name
-        statusLabel?.text = randomUser.status
-        dateOfBirthLabel?.text = randomUser.dateOfBirth
-        homeTownLabel?.text = randomUser.homeTown
-        languagesLabel?.text = languagesString
-        locationLabel?.text = randomUser.location
-        instagramLabel?.text = randomUser.instagram
-        vkLabel?.text = randomUser.vk
-        companyOneLabel?.text = randomUser.companyOne
-        companyTwoLabel?.text = randomUser.companyTwo
-        schoolLabel?.text = randomUser.school
-        universityLabel?.text = randomUser.university
+        avatarImage.image = UIImage(named: randomUser.avatarImage)
+        yearLabel.text = randomUser.year
+        cityLabel.text = randomUser.city
+        nameLabel.text = randomUser.name
+        statusLabel.text = randomUser.status
+        dateOfBirthLabel.text = randomUser.dateOfBirth
+        homeTownLabel.text = randomUser.homeTown
+        languagesLabel.text = languagesString
+        locationLabel.text = randomUser.location
+        instagramLabel.text = randomUser.instagram
+        vkLabel.text = randomUser.vk
+        companyOneLabel.text = randomUser.companyOne
+        companyTwoLabel.text = randomUser.companyTwo
+        schoolLabel.text = randomUser.school
+        universityLabel.text = randomUser.university
     }
 }
 
