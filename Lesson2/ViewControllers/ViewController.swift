@@ -78,7 +78,7 @@ class ViewController: UIViewController {
         
         super.viewWillAppear(animated)
         
-        scrollView.contentSize.height = scrollView.getHeight() + 150
+        scrollView.contentSize.height = scrollView.getHeight() + 120
         
         if user.status.isEmpty {
             setStatusButton.setTitle("Set status", for: .normal)
