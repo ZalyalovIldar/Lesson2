@@ -21,6 +21,8 @@ class EditStatusViewController : UIViewController {
     override func viewDidLoad() {
         
         super.viewDidLoad()
+        configure(with: user)
+        user = RandomUserBuilder.getRandomUser()
         statusTextView.text = user.status
     }
     
