@@ -25,18 +25,22 @@ class ProfileViewController: UIViewController {
     @IBOutlet weak var userJob2: UIButton!
     @IBOutlet weak var userSchool: UILabel!
     @IBOutlet weak var userUniversity: UILabel!
+    
+    @IBOutlet weak var scrollView: UIScrollView!
     override func viewDidLoad() {
-    super.viewDidLoad()
         
-    VariableInitialization()
+    super.viewDidLoad()
+    variableInitialization()
         
     }
     
     
-    
-    func VariableInitialization() {
+    func variableInitialization() {
+        
+        scrollView.contentSize.height = 1400
         
         let nameArray = ["Зеленка", "Пупочка", "Булочка", "Сгущенка"]
+        
         userName.text = nameArray.randomElement()
         
         titleViewController.title = userName.text
@@ -56,15 +60,5 @@ class ProfileViewController: UIViewController {
         let universityArray = ["КФУ", "КНИТУ", "КАИ"]
         userUniversity.text = universityArray.randomElement()
         
-        
-        
-        
-        
-        
-        
-        
     }
-    
-    
-    
 }
