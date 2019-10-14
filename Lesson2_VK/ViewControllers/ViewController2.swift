@@ -38,25 +38,23 @@ class ViewController2: UIViewController {
     @IBOutlet weak var giftImage1: UIImageView!
     @IBOutlet weak var giftImage2: UIImageView!
     @IBOutlet weak var giftImage3: UIImageView!
-    
+    let scrollHeight = 1400
     
     override func viewDidLoad() {
         super.viewDidLoad()
         let user = User()
         fillData(user: user)
-        // Do any additional setup after loading the view.
     }
     
     func fillData(user: User){
-        scrollView.contentSize.height = 1400
+        
+        scrollView.contentSize.height = CGFloat(scrollHeight)
         nameLabel.text = user.name + " " + user.surname
         imageAvatar.image = UIImage(named: user.avatar )
         imageAvatar.layer.cornerRadius = imageAvatar.frame.height / 2
         imageAvatar.clipsToBounds = true
         statusLabel.text = user.status
-        //statusLabel.numberOfLines = 0
         birhdayField.text = user.birthDay
-        //birhdayField.numberOfLines = 0
         hometownLabel.text = user.homeTown
         studietLabel.text = user.university
         vkLabel.text = "\(user.vkId)"
@@ -68,7 +66,6 @@ class ViewController2: UIViewController {
         giftImage1.image = UIImage(named: user.gifts[0])
         giftImage2.image = UIImage(named: user.gifts[1])
         giftImage3.image = UIImage(named: user.gifts[1])
-        
     }
     
 }

@@ -25,6 +25,13 @@ class User {
     init() {
         print("User created")
     }
+    
+class Wall {
+    var news: [String] = ["Hello World","iOS lab"]
+    init(){
+        print("Wall created")
+    }
+    }
 }
 
 
